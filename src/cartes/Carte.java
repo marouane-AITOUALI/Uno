@@ -1,21 +1,14 @@
 package cartes;
 import cartes.Couleur;
 
+import java.util.Random;
+
+
 public abstract class Carte {
 
-    private int valeur;
-    private Couleur couleur ;
-    private Uno uno;
+    protected Couleur couleur ;
+    protected Uno uno;
 
-    /**
-     * Construction par valeur et couleur de carte
-     * @param valeur Valeur de la carte
-     * @param couleur Couleur de la carte
-     */
-    public Carte(int valeur, Couleur couleur) {
-        this.valeur = valeur;
-        this.couleur = couleur;
-    }
 
     /**
      * Construction d'une carte à partir d'Uno
@@ -85,14 +78,6 @@ public abstract class Carte {
      */
     public Couleur getCouleur(){
         return couleur;
-    }
-
-    /**
-    * Modifie la valeur de la carte
-    * @param valeur Nouvelle valeur de la carte
-    */
-    public void setValeur(int valeur) {
-        this.valeur = valeur;
     }
 
     /**

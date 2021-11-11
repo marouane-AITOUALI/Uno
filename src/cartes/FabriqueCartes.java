@@ -32,13 +32,24 @@ public class FabriqueCartes{
         int p = 0;
         while (p < 4){
             Couleur couleur = Couleur.values()[p];
-            for(int i = 0; i < 8; i++){
+            for(int i = 0; i < 9; i++){
                 Carte carte = new Carte(i+1, couleur);
                 paquet.ajouter(carte);
             }
             p++;
         }
         return paquet;    
+    }
+
+    public PaquetDeCartes jeuUno(){
+        PaquetDeCartes p = new PaquetDeCartes();
+        Uno u = new Uno();
+        Couleur J = Couleur.JAUNE;
+        Couleur R = Couleur.ROUGE;
+        Couleur V = Couleur.VERT;
+        Couleur B = Couleur.BLEU;
+        for (int i = 0; i )
+        Chiffre c = new Chiffre
     }
 
     /**
