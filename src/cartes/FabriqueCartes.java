@@ -48,7 +48,7 @@ public class FabriqueCartes{
         Couleur R = Couleur.ROUGE;
         Couleur V = Couleur.VERT;
         Couleur B = Couleur.BLEU;
-        for (int i = 0; i )
+        for (int i = 0; i  < 108; i++ )
         Chiffre c = new Chiffre
     }
 
