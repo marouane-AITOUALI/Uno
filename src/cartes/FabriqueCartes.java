@@ -41,7 +41,7 @@ public class FabriqueCartes{
         return paquet;    
     }
 
-    public PaquetDeCartes jeuUno(Uno u){
+    public PaquetDeCartes jeuUno(Uno u) {
         PaquetDeCartes p = new PaquetDeCartes();
         Couleur J = Couleur.JAUNE;
         Couleur R = Couleur.ROUGE;
@@ -52,15 +52,18 @@ public class FabriqueCartes{
         Chiffre c3 = new Chiffre(u, V, 0);
         Chiffre c4 = new Chiffre(u, B, 0);
         p.ajouter(c1, c2, c3, c4);
-        for (int j = 0; j < 2; j++){
-            for (int i = 1; i  < 9; i++){
+        for (int j = 0; j < 2; j++) {
+            for (int i = 1; i < 9; i++) {
                 Chiffre a = new Chiffre(u, J, i);
                 Chiffre b = new Chiffre(u, R, i);
-                Chiffre c = new Chiffre(u, R, i);
-                Chiffre d = new Chiffre(u, R, i);
+                Chiffre c = new Chiffre(u, V, i);
+                Chiffre d = new Chiffre(u, B, i);
                 p.ajouter(a, b, c, d);
             }
         }
+        return p;
+    }
+
 
     /**
     * Retourne un paquet de 8 cartes vertes
