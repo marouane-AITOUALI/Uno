@@ -2,7 +2,7 @@ package cartes;
 
 public class Plus2 extends Carte {
 
-    public Plus2(Couleur c, Uno u){
+    public Plus2(Uno u, Couleur c){
         super(u, c);
     }
 
