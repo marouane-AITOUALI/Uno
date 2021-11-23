@@ -10,6 +10,10 @@ public class PasseTonTour extends Carte{
         return 20;
     }
 
+    public String getNom(){
+        return "PasseTonTour";
+    }
+
     public boolean peutEtreRecouvertePar(Carte c){
         return c.getValeur() == 50 || this.estDeCouleurCompatibleAvec(c) || this.getValeur() == c.getValeur();
     }

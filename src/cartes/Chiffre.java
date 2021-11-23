@@ -8,6 +8,10 @@ public class Chiffre extends Carte {
         this.valeur = valeur;
     }
 
+    public String getNom(){
+        return "Chiffre";
+    }
+
     public int getValeur(){
         return valeur;
     }

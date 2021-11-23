@@ -10,6 +10,10 @@ public class Joker extends Carte{
         return 50;
     }
 
+    public String getNom(){
+        return "Joker";
+    }
+
 
     public boolean peutEtreRecouvertePar(Carte c){
         return c.estDeCouleurCompatibleAvec(this);

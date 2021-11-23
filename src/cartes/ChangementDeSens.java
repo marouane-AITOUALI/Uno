@@ -6,6 +6,10 @@ public class ChangementDeSens extends Carte{
         super(u, c);
     }
 
+    public String getNom(){
+        return "ChangementDeSens";
+    }
+
     public int getValeur(){
         return 20;
     }

@@ -81,6 +81,12 @@ public abstract class Carte {
     }
 
     /**
+     * Retourne le nom de la carte
+     * @return Nom de la carte
+     */
+    public abstract String getNom();
+
+    /**
     * Modifie la couleur de la carte
     * @param couleur Nouvelle couleur de la carte
     */
@@ -92,9 +98,9 @@ public abstract class Carte {
     * Retourne la chaîne "Carte{valeur= val, couleur= coul}" où val valeur de la carte et coul la couleur
     * @return "Carte{valeur=valeur de la carte, couleur=couleur de la carte}" */
     public String toString() {
-        return "Carte{" +
-                "valeur=" + valeur +
-                ", couleur=" + couleur +
+        return ""+ this.getNom() +
+                " " + this.getValeur() +
+                " " + this.getCouleur() +
                 '}';
     }
 

@@ -32,8 +32,8 @@ public class FabriqueCartes{
         int p = 0;
         while (p < 4){
             Couleur couleur = Couleur.values()[p];
-            for(int i = 0; i < 9; i++){
-                Carte carte = new Carte(i+1, couleur);
+            for(int i = 1; i < 9; i++){
+                Carte carte = new Carte(i, couleur);
                 paquet.ajouter(carte);
             }
             p++;

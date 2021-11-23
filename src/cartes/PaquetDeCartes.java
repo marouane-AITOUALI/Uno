@@ -1,5 +1,8 @@
 package cartes;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Random;
+
 /**
 * Un Paquet de Carte(valeur, couleur)
 * @author Marouane AIT OUALI, Université de Lorraine
@@ -145,16 +148,18 @@ public class PaquetDeCartes{
         try{
             File f = new File(nomDeFichier);
             if (!f.exists()) {
-                throw new ErreurFichier();
+                throw new ErreurFichier("Erreur dans le fichier");
             }
             FileWriter flot = new FileWriter(nomDeFichier);
             BufferedWriter flotFiltre = new BufferedWriter(flot);
-
-        
-
+            for(int i = 0; i < this.getNombreDeCartes(); ++i){
+                flotFiltre.write(this.cartes.get(i).toString());
+                flotFiltre.newLine();
+            }
+            flotFiltre.close();
         }
-        catch(ErreurFichier ef){
-            System.out.println("Erreur dans téléchargement du fichier !");
+        catch(ErreurFichier | IOException ef){
+            System.out.println(ef.getMessage());
         }
     }
 

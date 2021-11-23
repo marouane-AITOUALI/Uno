@@ -10,6 +10,10 @@ public class Plus2 extends Carte {
         return 20;
     }
 
+    public String getNom(){
+        return "Plus2";
+    }
+
     public boolean peutEtreRecouvertePar(Carte c){
         return c.getValeur() == 50 || this.getValeur() == c.getValeur() || this.estDeCouleurCompatibleAvec(c);
     }
