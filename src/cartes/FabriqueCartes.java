@@ -27,7 +27,10 @@ public class FabriqueCartes{
     * Retourne un paquet de 32 cartes avec 4 couleurs différentes
     * @return Paquet de 32 cartes avec 4 couleurs différentes
     */
-    public PaquetDeCartes getPaquet32(){
+
+ /**
+ * Ancienne version : constructeur avec valeur et couleur
+  public PaquetDeCartes getPaquet32(){
         PaquetDeCartes paquet = new PaquetDeCartes();
         int p = 0;
         while (p < 4){
@@ -40,8 +43,9 @@ public class FabriqueCartes{
         }
         return paquet;    
     }
+  */
 
-    public PaquetDeCartes jeuUno(Uno u) {
+    public PaquetDeCartes getPaquet108(Uno u) {
         PaquetDeCartes p = new PaquetDeCartes();
         Couleur J = Couleur.JAUNE;
         Couleur R = Couleur.ROUGE;
@@ -53,7 +57,7 @@ public class FabriqueCartes{
         Chiffre c4 = new Chiffre(u, B, 0);
         p.ajouter(c1, c2, c3, c4);
         for (int j = 0; j < 2; j++) {
-            for (int i = 1; i < 9; i++) {
+            for (int i = 1; i <= 9; i++) {
                 Chiffre a = new Chiffre(u, J, i);
                 Chiffre b = new Chiffre(u, R, i);
                 Chiffre c = new Chiffre(u, V, i);
@@ -64,7 +68,7 @@ public class FabriqueCartes{
 
         // Cartes spéciales
         // Passe ton tour - Inversement de sens -
-        for (int a = 0; a < 8; ++a){
+        for (int a = 0; a < 2; ++a){
             PasseTonTour ptt1 = new PasseTonTour(u, J);
             PasseTonTour ptt2 = new PasseTonTour(u, R);
             PasseTonTour ptt3 = new PasseTonTour(u, B);
@@ -92,11 +96,13 @@ public class FabriqueCartes{
     }
 
 
+
     /**
     * Retourne un paquet de 8 cartes vertes
     * @return Paquet de 8 cartes vertes
     */
-
+/**
+ * Ancienne version : constructeur avec valeur et couleur
     public PaquetDeCartes getPaquet1Vert(){
         PaquetDeCartes paquetVert = new PaquetDeCartes();
         
@@ -106,8 +112,9 @@ public class FabriqueCartes{
             paquetVert.ajouter(carte);
         }
         return paquetVert;
+
     }
-    
+ */
 
    
 }

@@ -2,6 +2,7 @@ package cartes;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
+import cartes.FabriqueCartes;
 
 /**
 * Un Paquet de Carte(valeur, couleur)
@@ -162,6 +163,7 @@ public class PaquetDeCartes{
             System.out.println(ef.getMessage());
         }
     }
+
 
 
 }
