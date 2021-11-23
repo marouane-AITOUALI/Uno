@@ -1,9 +1,5 @@
 package cartes;
-import cartes.Couleur;
-import cartes.Carte;
-import java.util.ArrayList;
-import java.util.Random;
-
+import java.io.*;
 /**
 * Un Paquet de Carte(valeur, couleur)
 * @author Marouane AIT OUALI, Université de Lorraine
@@ -139,6 +135,29 @@ public class PaquetDeCartes{
         enlever(carte);
         return carte;
     }
+
+    /**
+     * Description de chaque carte du paquet
+     * @param nomDeFichier nom du fichier
+     */
+
+    void ecrire(String nomDeFichier) throws ErreurFichier{
+        try{
+            File f = new File(nomDeFichier);
+            if (!f.exists()) {
+                throw new ErreurFichier();
+            }
+            FileWriter flot = new FileWriter(nomDeFichier);
+            BufferedWriter flotFiltre = new BufferedWriter(flot);
+
+        
+
+        }
+        catch(ErreurFichier ef){
+            System.out.println("Erreur dans téléchargement du fichier !");
+        }
+    }
+
 
 }
 
