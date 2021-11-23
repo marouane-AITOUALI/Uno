@@ -61,25 +61,31 @@ public class FabriqueCartes{
                 p.ajouter(a, b, c, d);
             }
         }
+
         // Cartes spéciales
-        for (int b = 0; b < 2; b++){
-            // Passe ton tour - Inversement de sens -
-            for (int a = 0; a < 4; ++a){
-                PasseTonTour ptt1 = new PasseTonTour(u, J);
-                PasseTonTour ptt2 = new PasseTonTour(u, R);
-                PasseTonTour ptt3 = new PasseTonTour(u, B);
-                PasseTonTour ptt4 = new PasseTonTour(u, V);
+        // Passe ton tour - Inversement de sens -
+        for (int a = 0; a < 8; ++a){
+            PasseTonTour ptt1 = new PasseTonTour(u, J);
+            PasseTonTour ptt2 = new PasseTonTour(u, R);
+            PasseTonTour ptt3 = new PasseTonTour(u, B);
+            PasseTonTour ptt4 = new PasseTonTour(u, V);
 
-                Plus2 p2_1 = new Plus2(u, J);
-                Plus2 p2_2 = new Plus2(u, R);
-                Plus2 p2_3 = new Plus2(u, B);
-                Plus2 p2_4 = new Plus2(u, V);
+            Plus2 p2_1 = new Plus2(u, J);
+            Plus2 p2_2 = new Plus2(u, R);
+            Plus2 p2_3 = new Plus2(u, B);
+            Plus2 p2_4 = new Plus2(u, V);
 
-                ChangementDeSens cds1 = new ChangementDeSens(u, J);
-                ChangementDeSens cds2 = new ChangementDeSens(u, R);
-                ChangementDeSens cds3 = new ChangementDeSens(u, B);
-                ChangementDeSens cds4 = new ChangementDeSens(u, V);
-            }
+            ChangementDeSens cds1 = new ChangementDeSens(u, J);
+            ChangementDeSens cds2 = new ChangementDeSens(u, R);
+            ChangementDeSens cds3 = new ChangementDeSens(u, B);
+            ChangementDeSens cds4 = new ChangementDeSens(u, V);
+            p.ajouter(ptt1, ptt2, ptt3, ptt4, p2_1, p2_2, p2_3, p2_4, cds1, cds2, cds3, cds4);
+        }
+
+        for (int cpt = 0; cpt < 4; cpt++){
+            Joker j = new Joker(u);
+            Plus4 p4 = new Plus4(u);
+            p.ajouter(j, p4);
         }
 
         return p;
