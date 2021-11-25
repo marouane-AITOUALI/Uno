@@ -163,7 +163,15 @@ public class PaquetDeCartes{
             System.out.println(ef.getMessage());
         }
     }
+    // Cette partie permet d'écrire les cartes du paquet p dans le fichier test.txt
 
+    /*
+    public static void main(String [] args) throws ErreurFichier {
+        FabriqueCartes f = new FabriqueCartes();
+        PaquetDeCartes p = f.getPaquet108();
+        p.ecrire("test.txt");
+    }
+    */
 
 
 }
