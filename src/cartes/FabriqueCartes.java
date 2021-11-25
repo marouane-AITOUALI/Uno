@@ -28,7 +28,7 @@ public class FabriqueCartes{
     * @return Paquet de 32 cartes avec 4 couleurs différentes
     */
 
- /**
+ /*
  * Ancienne version : constructeur avec valeur et couleur
   public PaquetDeCartes getPaquet32(){
         PaquetDeCartes paquet = new PaquetDeCartes();
@@ -101,7 +101,7 @@ public class FabriqueCartes{
     * Retourne un paquet de 8 cartes vertes
     * @return Paquet de 8 cartes vertes
     */
-/**
+/*
  * Ancienne version : constructeur avec valeur et couleur
     public PaquetDeCartes getPaquet1Vert(){
         PaquetDeCartes paquetVert = new PaquetDeCartes();
