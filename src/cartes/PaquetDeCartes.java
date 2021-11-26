@@ -2,6 +2,8 @@ package cartes;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
+
 import cartes.FabriqueCartes;
 
 /**
@@ -148,8 +150,8 @@ public class PaquetDeCartes{
     void ecrire(String nomDeFichier) throws ErreurFichier{
         try{
             File f = new File(nomDeFichier);
-            if (!f.exists()) {
-                throw new ErreurFichier("Erreur dans le fichier");
+            if (f.exists()) {
+                throw new ErreurFichier("Le fichier existe déjà !");
             }
             FileWriter flot = new FileWriter(nomDeFichier);
             BufferedWriter flotFiltre = new BufferedWriter(flot);
@@ -163,6 +165,30 @@ public class PaquetDeCartes{
             System.out.println(ef.getMessage());
         }
     }
+
+    void lire(String nomDeFichier) throws ErreurFichier{
+        try{
+            File f = new File(nomDeFichier);
+            if (!f.exists()){
+                throw new ErreurFichier("Le fichier n'existe pas");
+            }
+            FileReader flot = new FileReader(nomDeFichier);
+            BufferedReader flotFiltre = new BufferedReader(flot);
+            Scanner s = new Scanner(flotFiltre);
+            while(s.hasNext()){
+
+            }
+
+        }
+        catch  (ErreurFichier | FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+
+
+
     // Cette partie permet d'écrire les cartes du paquet p dans le fichier test.txt
 
     /*
