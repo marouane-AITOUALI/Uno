@@ -17,6 +17,7 @@ public class Uno {
 
     public void creerJoueur(int nbJoueur){
         this.joueurs = new ArrayList<>(nbJoueur);
+
     }
 
     public void distribuerCartes(){
@@ -37,7 +38,8 @@ public class Uno {
         assert (nbJoueur > 1) : "Bug nombre de joueurs";
         this.creerJoueur(nbJoueur);
         this.distribuerCartes();
-
+        this.choisirQuiDistribue();
+        this.choisirQuiJoue();
     }
 
 
