@@ -4,8 +4,6 @@ public abstract class Joueur{
 
     private int nb;
     private String nom;
-    private bot bot;
-    private JoueurHumain joueurHumain;
     private Uno u;
 
 
@@ -13,9 +11,6 @@ public abstract class Joueur{
         this.nb = nb;
         this.nom = nom;
         this.u = u;
-        this.bot = new Bot(int nb, String nom, u);
-        this.joueurHumain = new JoueurHumain(int nb, String nom, u);
-
     }
 
     public int getNb(){
@@ -25,4 +20,6 @@ public abstract class Joueur{
     public getNom(){
         return this.nom;
     }
+
+    public abstract void jouer(String coup);
 }
