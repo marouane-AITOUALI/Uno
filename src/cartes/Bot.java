@@ -7,4 +7,8 @@ public class Bot extends Joueur{
     }
 
 
+    public void jouer(String coup){
+
+    }
+
 }

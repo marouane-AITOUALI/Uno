@@ -26,6 +26,13 @@ public class Uno {
     }
 
     public void distribuerCartes(){
+        this.pioche  = FabriqueCartes.getInstance().getPaquet108(this);
+        for (int i = 0; i < ){
+            for(){
+
+            }
+        }
+        this.talon.ajouter(this.pioche.getSommet());
 
     }
 
