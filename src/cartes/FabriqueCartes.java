@@ -19,7 +19,7 @@ public class FabriqueCartes{
 
     /**
     * Constructeur */
-    public FabriqueCartes(){
+    private FabriqueCartes(){
         this.instance = instance;
     }
 

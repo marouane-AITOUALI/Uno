@@ -17,6 +17,11 @@ public class Uno {
 
     public void creerJoueur(int nbJoueur){
         this.joueurs = new ArrayList<>(nbJoueur);
+        this.joueurs.add(new JoueurHumain(0,"Marouane", this);
+
+        for (int i = 1; i < nbJoueur; i++){
+             this.joueurs.add(new Bot(i, "bot" + i, this));
+        }
 
     }
 

@@ -6,13 +6,15 @@ public abstract class Joueur{
     private String nom;
     private bot bot;
     private JoueurHumain joueurHumain;
+    private Uno u;
 
 
-    public Joueur(int nb, String nom, ){
+    public Joueur(int nb, String nom, Uno u){
         this.nb = nb;
         this.nom = nom;
-        this.bot = new Bot(int nb, String nom);
-        this.joueurHumain = new JoueurHumain(int nb, String nom);
+        this.u = u;
+        this.bot = new Bot(int nb, String nom, u);
+        this.joueurHumain = new JoueurHumain(int nb, String nom, u);
 
     }
 
