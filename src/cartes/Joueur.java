@@ -8,11 +8,14 @@ public abstract class Joueur{
     private Uno u;
 
 
-    public Joueur(int nb, String nom, PaquetDeCartes p, Uno u){
+    public Joueur(int nb, String nom, Uno u){
         this.nb = nb;
         this.nom = nom;
-        this.main = p;
         this.u = u;
+    }
+
+    public void setMain(PaquetDeCartes p){
+        this.main = p;
     }
 
     public int getNb(){
