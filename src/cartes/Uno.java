@@ -31,6 +31,10 @@ public class Uno {
 
     }
 
+    public PaquetDeCartes getPioche(){
+        return this.pioche;
+    }
+
     public PaquetDeCartes getTalon(){
         return this.talon;
     }
