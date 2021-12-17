@@ -36,7 +36,7 @@ public class Uno {
         for (int i = 0; i < 7;i++){
             for(int j = 0; j < this.joueurs.size();j++){
                 Carte carte = pioche.getSommet();
-                this.joueurs.getCarte(carte);
+                this.joueurs.get(j).getCarte(carte);
             }
         }
         this.talon.ajouter(this.pioche.getSommet());
