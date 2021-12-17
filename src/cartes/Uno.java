@@ -1,6 +1,7 @@
 package cartes;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Uno {
 
@@ -32,7 +33,7 @@ public class Uno {
 
     public void distribuerCartes(){
         this.pioche  = FabriqueCartes.getInstance().getPaquet108(this);
-        for (int i = 0; i < 8;i++){
+        for (int i = 0; i < 7;i++){
             for(int j = 0; j < this.joueurs.size();j++){
 
             }
@@ -42,11 +43,17 @@ public class Uno {
     }
 
     public void choisirQuiDistribue(){
-
+        Random r = new Random();
+        this.joueurQuiDistribue = r.nextInt(this.getNbJoueur());
     }
 
     public void choisirQuiJoue(){
-
+        if(joueurQuiDistribue == this.getNbJoueur() - 1){
+            this.joueurActuel = 0;
+        }
+        else {
+            this.joueurActuel = this.joueurQuiDistribue + 1;
+        }
     }
 
 
