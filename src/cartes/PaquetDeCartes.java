@@ -137,7 +137,7 @@ public class PaquetDeCartes{
     */
 
     public Carte piocher(){
-        Carte carte = getSommet();
+        Carte carte = getSo mmet();
         enlever(carte);
         return carte;
     }

@@ -18,6 +18,10 @@ public abstract class Joueur{
         this.main = p;
     }
 
+    public void getCarte(Carte c){
+        this.main.ajouter(c);
+    }
+
     public int getNb(){
         return this.nb;
     }
