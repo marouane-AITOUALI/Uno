@@ -40,6 +40,10 @@ public class PaquetDeCartes{
         return this.cartes;
     }
 
+    public Carte getCarte(int i){
+        return this.cartes.get(i);
+    }
+
     /**
     * Retourne la somme des valeurs des cartes dans le paquet
     * @return Somme des valeurs des cartes dans le paquet
@@ -137,7 +141,7 @@ public class PaquetDeCartes{
     */
 
     public Carte piocher(){
-        Carte carte = getSo mmet();
+        Carte carte = getSommet();
         enlever(carte);
         return carte;
     }

@@ -31,14 +31,19 @@ public class Uno {
 
     }
 
+    public PaquetDeCartes getTalon(){
+        return this.talon;
+    }
+
     public void distribuerCartes(){
         this.pioche  = FabriqueCartes.getInstance().getPaquet108(this);
         for (int i = 0; i < 7;i++){
             for(int j = 0; j < this.joueurs.size();j++){
                 Carte carte = pioche.getSommet();
-                this.joueurs.get(j).getCarte(carte);
+                this.joueurs.get(j).recoitCarte(carte);
             }
         }
+        this.talon = new PaquetDeCartes();
         this.talon.ajouter(this.pioche.getSommet());
 
     }
@@ -49,10 +54,10 @@ public class Uno {
     }
 
     public void choisirQuiJoue(){
-        if(joueurQuiDistribue == this.getNbJoueur() - 1){
+        if (this.joueurQuiDistribue == this.getNbJoueur() - 1 ){
             this.joueurActuel = 0;
         }
-        else {
+        else{
             this.joueurActuel = this.joueurQuiDistribue + 1;
         }
     }
@@ -61,6 +66,7 @@ public class Uno {
 
     public void initialiser(int nbJoueur){
         assert (nbJoueur > 1) : "Bug nombre de joueurs";
+        this.sensPartie = true;
         this.creerJoueur(nbJoueur);
         this.distribuerCartes();
         this.choisirQuiDistribue();

@@ -14,21 +14,23 @@ public abstract class Joueur{
         this.u = u;
     }
 
+    public Uno getUno(){
+        return this.u;
+    }
+    public PaquetDeCartes getMain() {
+        return main;
+    }
+
     public void setMain(PaquetDeCartes p){
         this.main = p;
     }
 
-    public void getCarte(Carte c){
+    public void recoitCarte(Carte c){
         this.main.ajouter(c);
     }
 
     public int getNb(){
         return this.nb;
-    }
-
-
-    public PaquetDeCartes getMain() {
-        return main;
     }
 
     public String getNom(){
