@@ -35,8 +35,8 @@ public class Uno {
         this.pioche  = FabriqueCartes.getInstance().getPaquet108(this);
         for (int i = 0; i < 7;i++){
             for(int j = 0; j < this.joueurs.size();j++){
-                Carte c = pioche.getSommet();
-                this.joueurs.get(0)
+                Carte carte = pioche.getSommet();
+                this.joueurs.getCarte(carte);
             }
         }
         this.talon.ajouter(this.pioche.getSommet());
