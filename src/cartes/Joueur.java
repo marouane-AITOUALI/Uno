@@ -34,6 +34,9 @@ public abstract class Joueur{
         this.main.ajouter(c);
     }
 
+    public abstract boolean estHumain();
+
+
     public int getNb(){
         return this.nb;
     }
@@ -42,5 +45,5 @@ public abstract class Joueur{
         return this.nom;
     }
 
-    public abstract void jouer(String coup);
+    public abstract void jouer(String coup) throws CoupIncorrect;
 }
