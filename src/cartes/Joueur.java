@@ -12,6 +12,7 @@ public abstract class Joueur{
         this.nb = nb;
         this.nom = nom;
         this.u = u;
+        this.main = new PaquetDeCartes();
     }
 
     public Uno getUno(){
@@ -19,6 +20,10 @@ public abstract class Joueur{
     }
     public PaquetDeCartes getMain() {
         return main;
+    }
+
+    public Carte getCarte(int i){
+        return this.main.getCarte(i);
     }
 
     public void setMain(PaquetDeCartes p){

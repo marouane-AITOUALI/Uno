@@ -11,6 +11,7 @@ public class Uno {
     private PaquetDeCartes talon;
     private boolean sensPartie;
     private ArrayList<Joueur> joueurs;
+    private Dialogue dialogue;
 
     public Uno(){
         initialiser(joueurs.size());

@@ -29,7 +29,6 @@ public class PaquetDeCartes{
     public boolean estVide(){
         return this.cartes.isEmpty();
     }
-
     /**
     * Retourne les cartes du paquet this.cartes
     * @return Cartes dans le paquet
