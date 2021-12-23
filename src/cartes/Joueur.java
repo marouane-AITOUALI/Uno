@@ -22,14 +22,6 @@ public abstract class Joueur{
         return main;
     }
 
-    public Carte getCarte(int i){
-        return this.main.getCarte(i);
-    }
-
-    public void setMain(PaquetDeCartes p){
-        this.main = p;
-    }
-
     public void recoitCarte(Carte c){
         this.main.ajouter(c);
     }

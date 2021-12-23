@@ -29,7 +29,14 @@ public class Uno {
             PaquetDeCartes p = new PaquetDeCartes();
              this.joueurs.add(new Bot(i, "bot" + i, this));
         }
+    }
 
+    public int getJoueurActuel(){
+        return joueurActuel;
+    }
+
+    public Joueur getJoueur(int i){
+        return joueurs.get(i);
     }
 
     public PaquetDeCartes getPioche(){
