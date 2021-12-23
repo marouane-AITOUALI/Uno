@@ -66,15 +66,19 @@ public class Uno {
     }
 
     public void choisirQuiJoue(){
-        if (this.joueurQuiDistribue == this.getNbJoueur() - 1 ){
+        if (this.joueurQuiDistribue == this.getNbJoueur() - 1 && sensPartie){
             this.joueurActuel = 0;
         }
+        else if(this.joueurQuiDistribue != 0 && !sensPartie){
+            this.joueurActuel -= 1;
+        }
+        else if(this.joueurQuiDistribue != this.getNbJoueur() - 1 && sensPartie){
+            this.joueurActuel += 1;
+        }
         else{
-            this.joueurActuel = this.joueurQuiDistribue + 1;
+            this.joueurActuel = this.getNbJoueur() - 1;
         }
     }
-
-
 
     public void initialiser(int nbJoueur){
         assert (nbJoueur > 1) : "Bug nombre de joueurs";
