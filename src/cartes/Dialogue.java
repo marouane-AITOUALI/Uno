@@ -17,6 +17,13 @@ public class Dialogue {
         System.out.println("---------- BIENVENUE DANS UNO ----------\n");
         boolean fin = false;
         while(!fin){
+            if(uno.getPioche().getNombreDeCartes() == 0){
+                Carte sommet = uno.getTalon().getSommet();
+                uno.getTalon().enlever(sommet);
+                uno.setPioche(uno.getTalon());
+                uno.setTalon(FabriqueCartes.getInstance().paquetEmpty());
+
+            }
             if(uno.getJoueur(uno.getJoueurActuel()).estHumain()){
                 System.out.println("C'est le tour du joueur: " + uno.getJoueurActuel()+
                         "\nLa carte sur le sommet du talon est:" + uno.getTalon().getSommet()+"\n" +
@@ -35,6 +42,7 @@ public class Dialogue {
                 System.out.println("---------- Fin partie ----------\n");
                 afficherStats(uno.getJoueurActuel());
             }
+            uno.appliquerCarteSpecial();
             uno.choisirQuiJoue();
         }
     }

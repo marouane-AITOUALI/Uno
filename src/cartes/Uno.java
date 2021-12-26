@@ -17,6 +17,38 @@ public class Uno {
         dialogue = d;
     }
 
+    public void setPioche(PaquetDeCartes p){
+        pioche = p;
+    }
+
+    public void setTalon(PaquetDeCartes p){
+        talon = p;
+    }
+
+    public void appliquerCarteSpecial(){
+        Carte carte = this.getTalon().getSommet();
+        if(carte.getNom().equals("ChangementDeSens")){
+            sensPartie = !sensPartie;
+        }
+        else if(carte.getNom().equals("PasseTonTour")){
+            this.choisirQuiJoue();
+        }
+        else if(carte.getNom().equals("Plus4")){
+            this.choisirQuiJoue();
+            for(int i = 0; i < 4; i++){
+                Carte ajout = this.getPioche().piocher();
+                this.getJoueur(joueurActuel ).recoitCarte(ajout);
+            }
+        }
+        else if(carte.getNom().equals("Plus2")){
+            this.choisirQuiJoue();
+            for(int i = 0; i < 2; i++){
+                Carte ajout = this.getPioche().piocher();
+                this.getJoueur(joueurActuel).recoitCarte(ajout);
+            }
+        }
+    }
+
     public Uno(int nbJoueur){
         initialiser(nbJoueur);
     }

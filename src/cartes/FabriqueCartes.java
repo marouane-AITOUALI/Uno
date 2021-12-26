@@ -95,7 +95,10 @@ public class FabriqueCartes{
         return p;
     }
 
-
+    public PaquetDeCartes paquetEmpty(){
+        PaquetDeCartes p = new PaquetDeCartes();
+        return p;
+    }
 
     /**
     * Retourne un paquet de 8 cartes vertes
