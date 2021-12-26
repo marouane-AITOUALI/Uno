@@ -16,7 +16,7 @@ public class Joker extends Carte{
 
 
     public boolean peutEtreRecouvertePar(Carte c){
-        return c.getValeur() == 50 || c.estDeCouleurCompatibleAvec(this);
+        return this.getValeur() == c.getValeur() || c.estDeCouleurCompatibleAvec(this);
     }
 
     public boolean peutEtrePoseeSur(Chiffre c){
