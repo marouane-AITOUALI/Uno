@@ -100,8 +100,8 @@ public abstract class Carte {
     public String toString() {
         return ""+ this.getNom() +
                 " " + this.getValeur() +
-                " " + this.getCouleur() +
-                '}';
+                " " + this.getCouleur()
+                ;
     }
 
     

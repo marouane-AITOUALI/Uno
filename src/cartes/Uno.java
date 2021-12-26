@@ -13,12 +13,20 @@ public class Uno {
     private ArrayList<Joueur> joueurs;
     private Dialogue dialogue;
 
-    public Uno(){
-        initialiser(joueurs.size());
+    public Uno(int nbJoueur){
+        initialiser(nbJoueur);
+    }
+
+    public boolean getSensPartie(){
+        return this.sensPartie;
     }
 
     public int getNbJoueur(){
         return joueurs.size();
+    }
+
+    public void setJoueurActuel(){
+        joueurActuel += 1;
     }
 
     public void creerJoueur(int nbJoueur){
@@ -26,8 +34,7 @@ public class Uno {
         this.joueurs.add(new JoueurHumain(0,"Marouane", this));
 
         for (int i = 1; i < nbJoueur; i++){
-            PaquetDeCartes p = new PaquetDeCartes();
-             this.joueurs.add(new Bot(i, "bot" + i, this));
+            this.joueurs.add(new Bot(i, "bot" + i, this));
         }
     }
 
@@ -49,9 +56,10 @@ public class Uno {
 
     public void distribuerCartes(){
         this.pioche  = FabriqueCartes.getInstance().getPaquet108(this);
+        pioche.melanger();
         for (int i = 0; i < 7;i++){
             for(int j = 0; j < this.joueurs.size();j++){
-                Carte carte = pioche.getSommet();
+                Carte carte = pioche.piocher();
                 this.joueurs.get(j).recoitCarte(carte);
             }
         }
@@ -63,9 +71,6 @@ public class Uno {
     public void choisirQuiDistribue(){
         Random r = new Random();
         this.joueurQuiDistribue = r.nextInt(this.getNbJoueur());
-    }
-
-    public void choisirQuiJoue(){
         if (this.joueurQuiDistribue == this.getNbJoueur() - 1 && sensPartie){
             this.joueurActuel = 0;
         }
@@ -77,6 +82,18 @@ public class Uno {
         }
         else{
             this.joueurActuel = this.getNbJoueur() - 1;
+        }
+    }
+
+    public void choisirQuiJoue(){
+        if(joueurActuel != this.getNbJoueur() - 1 && sensPartie){
+            joueurActuel += 1;
+        }else if(joueurActuel == this.getNbJoueur() - 1 && sensPartie){
+            joueurActuel = 0;
+        }else if(joueurActuel != 0 && !sensPartie){
+            joueurActuel -= 1;
+        }else{
+            joueurActuel = this.getNbJoueur() - 1;
         }
     }
 

@@ -20,7 +20,7 @@ public abstract class Joueur{
     }
     public PaquetDeCartes getMain() {
         return main;
-    }
+    }  
 
     public void recoitCarte(Carte c){
         this.main.ajouter(c);

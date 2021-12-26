@@ -1,5 +1,7 @@
 package cartes;
 
+import java.util.Scanner;
+
 public class Dialogue {
     protected Uno uno;
 
@@ -7,13 +9,43 @@ public class Dialogue {
         this.uno = uno;
     }
 
-    public String afficherCarte(){
-        return uno.getJoueur( uno.getJoueurActuel() ).getMain().toString();
+    public String afficherCarteHumain(){
+        return uno.getJoueur(0).getMain().toString();
     }
 
-    public void afficher(){
-        System.out.println("---------- BIENVENUE DANS UNO ----------");
-        System.out.println("C'est le tour du joueur: " + uno.getJoueurActuel());
-        System.out.println("Vos cartes sont : "+afficherCarte()+"\nChoisissez votre carte: ");
+    public void reagir() throws CoupIncorrect {
+        System.out.println("---------- BIENVENUE DANS UNO ----------\n");
+        boolean fin = false;
+        while(!fin){
+            if(uno.getJoueur(uno.getJoueurActuel()).estHumain()){
+                System.out.println("C'est le tour du joueur: " + uno.getJoueurActuel()+
+                        "\nLa carte sur le sommet du talon est:" + uno.getTalon().getSommet()+"\n" +
+                        "Le sens de la partie est:" +uno.getSensPartie());
+                System.out.println("La main du joueur humain sont :"+ afficherCarteHumain());
+                Scanner s = new Scanner(System.in);
+                System.out.println("Entrer la carte choisie: ");
+                String coup = s.nextLine();
+                uno.getJoueur(uno.getJoueurActuel()).jouer(coup);
+            }else{
+                uno.getJoueur(uno.getJoueurActuel()).jouer("");
+            }
+            if(uno.getJoueur(uno.getJoueurActuel()).getMain().getNombreDeCartes() == 0){
+                fin = true;
+                afficherStats(uno.getJoueurActuel());
+            }
+            uno.choisirQuiJoue();
+        }
     }
+
+    public void afficherStats(int gagnant){
+        System.out.println("Le joueur gagnant est: "+gagnant);
+        for (int i = 0; i < uno.getNbJoueur(); i++){
+            if (i != gagnant){
+                System.out.println("\nLe score du joueur " + uno.getJoueur(i) + "est : "
+                        +uno.getJoueur(i).getMain().getValeur());
+            }
+        }
+    }
+
+
 }
