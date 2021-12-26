@@ -124,18 +124,21 @@ public class JoueurHumain extends Joueur{
         assert (coup != null): "Coup invalide";
         try {
             Carte carteTalon = this.getUno().getTalon().getSommet();
-            if (coup == "p") {
+            if (coup.equals("p")) {
                 Carte cartePioche = this.getUno().getPioche().piocher();
                 if (carteTalon.peutEtreRecouvertePar(cartePioche)) {
                     this.getUno().getTalon().ajouter(cartePioche);
                 } else {
                     this.recoitCarte(carteTalon);
                 }
-            } else {
+            }
+            else {
                 Carte carte = this.carteChoisie(coup);
                 if (carteTalon.peutEtreRecouvertePar(carte)) {
                     this.getUno().getTalon().ajouter(carte);
                     this.getMain().enlever(carte);
+                }else{
+                    throw new CoupIncorrect("Coup incorrecte");
                 }
             }
         }

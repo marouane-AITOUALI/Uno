@@ -13,6 +13,10 @@ public class Uno {
     private ArrayList<Joueur> joueurs;
     private Dialogue dialogue;
 
+    public void setDialogue(Dialogue d){
+        dialogue = d;
+    }
+
     public Uno(int nbJoueur){
         initialiser(nbJoueur);
     }

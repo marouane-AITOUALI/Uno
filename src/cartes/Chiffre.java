@@ -17,7 +17,8 @@ public class Chiffre extends Carte {
     }
 
     public boolean peutEtreRecouvertePar(Carte c){
-        return valeur == c.getValeur();
+        return (c.getValeur()==50)||(valeur == c.getValeur())
+                || this.estDeCouleurCompatibleAvec(c);
     }
 
     public boolean peutEtrePoseeSur(Chiffre c){

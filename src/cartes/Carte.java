@@ -38,7 +38,7 @@ public abstract class Carte {
      * @return Vrai si la carte est sans couleur, Faux sinon
      */
     public boolean estSansCouleur(){
-        return couleur.equals(null);
+        return couleur == null;
     }
 
     /**

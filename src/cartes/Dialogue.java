@@ -27,10 +27,12 @@ public class Dialogue {
                 String coup = s.nextLine();
                 uno.getJoueur(uno.getJoueurActuel()).jouer(coup);
             }else{
+                System.out.println("C est le tour du bot "+uno.getJoueurActuel());
                 uno.getJoueur(uno.getJoueurActuel()).jouer("");
             }
             if(uno.getJoueur(uno.getJoueurActuel()).getMain().getNombreDeCartes() == 0){
                 fin = true;
+                System.out.println("---------- Fin partie ----------\n");
                 afficherStats(uno.getJoueurActuel());
             }
             uno.choisirQuiJoue();
@@ -38,10 +40,11 @@ public class Dialogue {
     }
 
     public void afficherStats(int gagnant){
-        System.out.println("Le joueur gagnant est: "+gagnant);
+        System.out.println("Le joueur gagnant est: "+uno.getJoueur(gagnant).getNom());
         for (int i = 0; i < uno.getNbJoueur(); i++){
             if (i != gagnant){
-                System.out.println("\nLe score du joueur " + uno.getJoueur(i) + "est : "
+                System.out.println("\nLes stats des autres joueurs:\nLe score du joueur "
+                        + uno.getJoueur(i).getNom() + " est : "
                         +uno.getJoueur(i).getMain().getValeur());
             }
         }

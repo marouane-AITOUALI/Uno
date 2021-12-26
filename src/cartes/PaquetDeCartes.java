@@ -71,7 +71,7 @@ public class PaquetDeCartes{
     */
     public void ajouter(Carte... cartes){
         for(int i = 0; i < cartes.length; ++i){
-            this.cartes.add(cartes[i]);
+            this.cartes.add(0, cartes[i]);
         }
         
     }
