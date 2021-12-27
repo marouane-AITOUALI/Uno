@@ -42,7 +42,7 @@ public class Dialogue {
                 System.out.println("---------- Fin partie ----------\n");
                 afficherStats(uno.getJoueurActuel());
             }
-            uno.appliquerCarteSpecial();
+            uno.appliquerEffet();
             uno.choisirQuiJoue();
         }
     }

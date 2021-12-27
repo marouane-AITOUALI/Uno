@@ -25,7 +25,7 @@ public class Uno {
         talon = p;
     }
 
-    public void appliquerCarteSpecial(){
+    public void appliquerEffet(){
         Carte carte = this.getTalon().getSommet();
         if(carte.getNom().equals("ChangementDeSens")){
             sensPartie = !sensPartie;
