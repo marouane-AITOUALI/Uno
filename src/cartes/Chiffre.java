@@ -3,15 +3,29 @@ package cartes;
 public class Chiffre extends Carte {
     private int valeur;
 
+    /**
+     * Constructeur d'une carte Chiffre
+     * @param u Uno
+     * @param c Couleur de la carte
+     * @param valeur Valeur de la carte
+     */
     public Chiffre(Uno u, Couleur c, int valeur){
         super(u, c);
         this.valeur = valeur;
     }
 
+    /**
+     * Nom de la carte
+     * @return Chiffre
+     */
     public String getNom(){
         return "Chiffre";
     }
 
+    /**
+     * Valeur de la carte
+     * @return Valeur de la carte
+     */
     public int getValeur(){
         return valeur;
     }

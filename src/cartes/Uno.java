@@ -3,6 +3,12 @@ package cartes;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * //////////////////////
+ * /////  Jeu UNO  /////
+ * ////////////////////
+ * @author Marouane AIT OUALI, Université de Lorraine
+ */
 public class Uno {
 
     private int joueurActuel;
@@ -13,10 +19,13 @@ public class Uno {
     private ArrayList<Joueur> joueurs;
     private Dialogue dialogue;
 
+
     public void setDialogue(Dialogue d){
         dialogue = d;
     }
-
+    public void startGame() throws CoupIncorrect {
+        dialogue.reagir();
+    }
     public void setPioche(PaquetDeCartes p){
         pioche = p;
     }

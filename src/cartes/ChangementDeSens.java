@@ -2,14 +2,27 @@ package cartes;
 
 public class ChangementDeSens extends Carte{
 
+    /**
+     * Constructeur d'une carte changement de sens
+     * @param u Uno auquel appartient la carte
+     * @param c Couleur de la carte
+     */
     public ChangementDeSens(Uno u, Couleur c){
         super(u, c);
     }
 
+    /**
+     * Nom de la carte
+     * @return ChangementDeSens
+     */
     public String getNom(){
         return "ChangementDeSens";
     }
 
+    /**
+     * Valeur de la carte
+     * @return 20
+     */
     public int getValeur(){
         return 20;
     }

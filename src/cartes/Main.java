@@ -7,7 +7,7 @@ public class Main {
         Uno uno = new Uno(nbJoueur);
         Dialogue dialogue = new Dialogue(uno);
         uno.setDialogue(dialogue);
-        dialogue.reagir();
+        uno.startGame();
 
     }
 }

@@ -29,7 +29,9 @@ public abstract class Carte {
     }
 
     /**
-     *
+     * Retourne vrai si la carte c peut etre posée sur la carte 'this'
+     * @param c Carte à posée
+     * @return true si carte peut etre recouverte par la Carte c, false sinon
      */
     public abstract boolean peutEtreRecouvertePar(Carte c);
 
@@ -50,20 +52,39 @@ public abstract class Carte {
     }
 
     /**
-     *
      * @param c Carte au Sommet
      * @return vrai si la carte peut être posée sur la carte c, Faux sinon
      */
     public abstract boolean peutEtrePoseeSur(Chiffre c);
 
+    /**
+     * @param c Carte au Sommet
+     * @return vrai si la carte peut être posée sur la carte c, Faux sinon
+     */
     public abstract boolean peutEtrePoseeSur(Plus2 c);
 
+    /**
+     * @param c Carte au Sommet
+     * @return vrai si la carte peut être posée sur la carte c, Faux sinon
+     */
     public abstract boolean peutEtrePoseeSur(Plus4 c);
 
+    /**
+     * @param c Carte au Sommet
+     * @return vrai si la carte peut être posée sur la carte c, Faux sinon
+     */
     public abstract boolean peutEtrePoseeSur(Joker c);
 
+    /**
+     * @param c Carte au Sommet
+     * @return vrai si la carte peut être posée sur la carte c, Faux sinon
+     */
     public abstract boolean peutEtrePoseeSur(PasseTonTour c);
 
+    /**
+     * @param c Carte au Sommet
+     * @return vrai si la carte peut être posée sur la carte c, Faux sinon
+     */
     public abstract boolean peutEtrePoseeSur(ChangementDeSens c);
 
     /**

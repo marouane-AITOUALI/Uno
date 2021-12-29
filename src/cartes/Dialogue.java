@@ -17,7 +17,7 @@ public class Dialogue {
         System.out.println("---------- BIENVENUE DANS UNO ----------\n");
         boolean fin = false;
         while(!fin){
-            if(uno.getPioche().getNombreDeCartes() == 0){
+            if(uno.getPioche().getNombreDeCartes() == 6){
                 Carte sommet = uno.getTalon().getSommet();
                 uno.getTalon().enlever(sommet);
                 uno.setPioche(uno.getTalon());

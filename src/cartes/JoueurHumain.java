@@ -2,20 +2,37 @@ package cartes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 
 public class JoueurHumain extends Joueur{
 
+    /**
+     * Constructeur d'un joueurHumain
+     * @param nb Numéro du joueur
+     * @param nom Nom du joueur
+     * @param u Uno
+     */
     public JoueurHumain(int nb, String nom, Uno u){
         super(nb, nom, u);
     }
 
+    /**
+     * Retourne true si le joueur est humain, false sinon
+     * @return True if human, otherwise false
+     */
     public boolean estHumain(){
         return true;
     }
 
+    /**
+     * Retourne la carte choisie par le joueurHumain
+     * @param coup La carte choisie
+     * @return La carte choisie dans la main du joueurHumain
+     * @throws CoupIncorrect En cas de coup incorrecte
+     */
     public Carte carteChoisie(String coup) throws CoupIncorrect{
         try{
             List liste = new ArrayList();
@@ -31,7 +48,13 @@ public class JoueurHumain extends Joueur{
                         throw new CoupIncorrect("La carte n'existe pas");
                     }
                     else{
-                        return this.getMain().getCarte(a - 1);
+                        Carte carte = this.getMain().getCarte(a-1);
+                        if (carte.estSansCouleur()){
+                            Random r = new Random();
+                            int index = r.nextInt(4);
+                            carte.setCouleur(Couleur.values()[index]);
+                        }
+                        return carte;
                     }
                 }
                 else {
@@ -53,7 +76,13 @@ public class JoueurHumain extends Joueur{
                         throw new CoupIncorrect("La carte n'existe pas");
                     }
                     else{
-                        return this.getMain().getCarte(a - 1);
+                        Carte carte = this.getMain().getCarte(a-1);
+                        if (carte.estSansCouleur()){
+                            Random r = new Random();
+                            int index = r.nextInt(4);
+                            carte.setCouleur(Couleur.values()[index]);
+                        }
+                        return carte;
                     }
                 }
                 else if(liste.contains(firstLetter)&& couleur.contains(secondLetter)){
@@ -120,6 +149,11 @@ public class JoueurHumain extends Joueur{
         return null;
     }
 
+    /**
+     * Permet au joueurHumain de jouer son coup
+     * @param coup Le coup choisi
+     * @throws CoupIncorrect En cas de coup invalide
+     */
     public void jouer(String coup) throws CoupIncorrect {
         assert (coup != null): "Coup invalide";
         try {
