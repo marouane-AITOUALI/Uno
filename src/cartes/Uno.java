@@ -3,12 +3,7 @@ package cartes;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * //////////////////////
- * /////  Jeu UNO  /////
- * ////////////////////
- * @author Marouane AIT OUALI, Université de Lorraine
- */
+
 public class Uno {
 
     private int joueurActuel;

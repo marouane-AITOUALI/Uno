@@ -116,12 +116,12 @@ public abstract class Carte {
     }
 
     /**
-    * Retourne la chaîne "Carte{valeur= val, couleur= coul}" où val valeur de la carte et coul la couleur
-    * @return "Carte{valeur=valeur de la carte, couleur=couleur de la carte}" */
+    * Retourne la chaîne "{Carte val couleur}" où Carte nom val valeur et couleur la couleur de la carte
+    * @return "{Carte=nom  val=valeur couleur= couleur de la Carte}" */
     public String toString() {
-        return ""+ this.getNom() +
+        return "{"+ this.getNom() +
                 " " + this.getValeur() +
-                " " + this.getCouleur()
+                " " + this.getCouleur() + "}"
                 ;
     }
 
