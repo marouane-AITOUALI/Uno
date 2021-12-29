@@ -22,13 +22,13 @@ public class Dialogue {
                 uno.getTalon().enlever(sommet);
                 uno.setPioche(uno.getTalon());
                 uno.setTalon(FabriqueCartes.getInstance().paquetEmpty());
-
+                uno.getTalon().ajouter(sommet);
             }
             if(uno.getJoueur(uno.getJoueurActuel()).estHumain()){
                 System.out.println("C'est le tour du joueur: " + uno.getJoueurActuel()+
                         "\nLa carte sur le sommet du talon est:" + uno.getTalon().getSommet()+"\n" +
                         "Le sens de la partie est:" +uno.getSensPartie());
-                System.out.println("La main du joueur humain sont :"+ afficherCarteHumain());
+                System.out.println("La main du joueur humain est :"+ afficherCarteHumain());
                 Scanner s = new Scanner(System.in);
                 System.out.println("Entrer la carte choisie: ");
                 String coup = s.nextLine();
@@ -48,10 +48,11 @@ public class Dialogue {
     }
 
     public void afficherStats(int gagnant){
-        System.out.println("Le joueur gagnant est: "+uno.getJoueur(gagnant).getNom());
+        System.out.println("Le joueur gagnant est: "+uno.getJoueur(gagnant).getNom()
+                +"\nLes stats des autres joueurs");
         for (int i = 0; i < uno.getNbJoueur(); i++){
             if (i != gagnant){
-                System.out.println("\nLes stats des autres joueurs:\nLe score du joueur "
+                System.out.println("\nLe score du joueur "
                         + uno.getJoueur(i).getNom() + " est : "
                         +uno.getJoueur(i).getMain().getValeur());
             }

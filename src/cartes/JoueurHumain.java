@@ -58,7 +58,7 @@ public class JoueurHumain extends Joueur{
                 }
                 else if(liste.contains(firstLetter)&& couleur.contains(secondLetter)){
                     int num = parseInt(firstLetter);
-                    if(this.getMain().getNombreDeCartes() < num - 1 || !this.getMain().getCarte(num - 1).estSansCouleur()){
+                    if(this.getMain().getNombreDeCartes() < num || !this.getMain().getCarte(num - 1).estSansCouleur()){
                         throw new CoupIncorrect("Carte inexistante ou le choix de couleur impossible pour la carte");
                     }
                     else{
@@ -129,7 +129,7 @@ public class JoueurHumain extends Joueur{
                 if (carteTalon.peutEtreRecouvertePar(cartePioche)) {
                     this.getUno().getTalon().ajouter(cartePioche);
                 } else {
-                    this.recoitCarte(carteTalon);
+                    this.recoitCarte(cartePioche);
                 }
             }
             else {
