@@ -9,10 +9,18 @@ public class Dialogue {
         this.uno = uno;
     }
 
+    /**
+     * Retourne les cartes du joueur humain
+     * @return liste des cartes du joueurHumain
+     */
     public String afficherCarteHumain(){
         return uno.getJoueur(0).getMain().toString();
     }
 
+    /**
+     * Affiche le jeu uno, le tour et le sens du jeu
+     * @throws CoupIncorrect En cas de coup invalide du joueurHumain
+     */
     public void reagir() throws CoupIncorrect {
         System.out.println("---------- BIENVENUE DANS UNO ----------\n");
         boolean fin = false;
@@ -25,7 +33,7 @@ public class Dialogue {
                 uno.getTalon().ajouter(sommet);
             }
             if(uno.getJoueur(uno.getJoueurActuel()).estHumain()){
-                System.out.println("C'est le tour du joueur: " + uno.getJoueurActuel()+
+                System.out.println("C'est le tour du joueur: " + uno.getJoueur(uno.getJoueurActuel()).getNom() +
                         "\nLa carte sur le sommet du talon est:" + uno.getTalon().getSommet()+"\n" +
                         "Le sens de la partie est:" +uno.getSensPartie());
                 System.out.println("La main du joueur humain est :"+ afficherCarteHumain());
