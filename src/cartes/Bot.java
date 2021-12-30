@@ -44,6 +44,11 @@ public class Bot extends Joueur {
         if(!trouve){
             Carte pioche = this.getUno().getPioche().piocher();
             if(carte.peutEtreRecouvertePar(pioche)){
+                if (pioche.estSansCouleur()){
+                    Random r = new Random();
+                    int a = r.nextInt(4);
+                    pioche.setCouleur(Couleur.values()[a]);
+                }
                 this.getUno().getTalon().ajouter(pioche);
             }
             else{
