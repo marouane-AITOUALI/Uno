@@ -36,7 +36,7 @@ public class Dialogue {
                 System.out.println("C'est le tour du joueur: " + uno.getJoueur(uno.getJoueurActuel()).getNom() +
                         "\nLa carte sur le sommet du talon est:" + uno.getTalon().getSommet()+"\n" +
                         "Le sens de la partie est:" +uno.getSensPartie());
-                System.out.println("La main du joueur humain est :"+ afficherCarteHumain());
+                System.out.println("Votre main est :"+ afficherCarteHumain());
                 Scanner s = new Scanner(System.in);
                 System.out.println("Entrer la carte choisie: ");
                 String coup = s.nextLine();
