@@ -25,6 +25,10 @@ public class Dialogue {
         System.out.println("---------- BIENVENUE DANS UNO ----------\n");
         boolean fin = false;
         while(!fin){
+
+            /* Si on arrive à la fin des cartes de pioche,
+             On echange le talon avec la pioche */
+
             if(uno.getPioche().getNombreDeCartes() <= 6){
                 Carte sommet = uno.getTalon().getSommet();
                 uno.getTalon().enlever(sommet);
@@ -33,6 +37,7 @@ public class Dialogue {
                 uno.setTalon(FabriqueCartes.getInstance().paquetEmpty());
                 uno.getTalon().ajouter(sommet);
             }
+
             if(uno.getJoueur(uno.getJoueurActuel()).estHumain()){
                 System.out.println("C'est le tour du joueur: " + uno.getJoueur(uno.getJoueurActuel()).getNom() +
                         "\nLa carte sur le sommet du talon est:" + uno.getTalon().getSommet()+"\n" +
