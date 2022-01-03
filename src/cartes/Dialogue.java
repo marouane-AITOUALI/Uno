@@ -5,6 +5,10 @@ import java.util.Scanner;
 public class Dialogue {
     protected Uno uno;
 
+    /**
+     * Constructeur de Dialogue
+     * @param uno Uno
+     */
     public Dialogue(Uno uno){
         this.uno = uno;
     }

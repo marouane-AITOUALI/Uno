@@ -2,14 +2,26 @@ package cartes;
 
 public class Plus4 extends Carte{
 
+    /**
+     * Constructeur carte Plus4
+     * @param u Uno
+     */
     public Plus4(Uno u){
         super(u);
     }
 
+    /**
+     * Retourne la valeur de la carte
+     * @return 50
+     */
     public int getValeur(){
         return 50;
     }
 
+    /**
+     * Retourne le nom de la carte
+     * @return Plus4
+     */
     public String getNom(){
         return "Plus4";
     }

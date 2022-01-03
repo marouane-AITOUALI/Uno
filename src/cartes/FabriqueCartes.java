@@ -45,6 +45,11 @@ public class FabriqueCartes{
     }
   */
 
+    /**
+     * Retourne un paquet complet du jeu uno
+     * @param u Uno
+     * @return Paquet de 108 cartes de Uno
+     */
     public PaquetDeCartes getPaquet108(Uno u) {
         PaquetDeCartes p = new PaquetDeCartes();
         Couleur J = Couleur.JAUNE;
