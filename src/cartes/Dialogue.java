@@ -29,6 +29,7 @@ public class Dialogue {
                 Carte sommet = uno.getTalon().getSommet();
                 uno.getTalon().enlever(sommet);
                 uno.getPioche().ajouter(uno.getTalon());
+                uno.getPioche().melanger();
                 uno.setTalon(FabriqueCartes.getInstance().paquetEmpty());
                 uno.getTalon().ajouter(sommet);
             }
