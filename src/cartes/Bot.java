@@ -31,12 +31,12 @@ public class Bot extends Joueur {
         boolean trouve = false;
         for (int i = 0; i < this.getMain().getNombreDeCartes() && !trouve; i++) {
             Carte carteBot = this.getMain().getCarte(i);
-            if (carteBot.estSansCouleur()){
-                Random r = new Random();
-                int a = r.nextInt(4);
-                carteBot.setCouleur(Couleur.values()[a]);
-            }
             if (carte.peutEtreRecouvertePar(carteBot)) {
+                if (carteBot.estSansCouleur()){
+                    Random r = new Random();
+                    int a = r.nextInt(4);
+                    carteBot.setCouleur(Couleur.values()[a]);
+                }
                 this.getUno().getTalon().ajouter(carteBot);
                 this.getMain().enlever(carteBot);
                 trouve = true;
