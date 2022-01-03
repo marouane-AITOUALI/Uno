@@ -8,6 +8,8 @@ package cartes;
  */
 
 public class Main {
+
+    // Le nombre de joueurs dans la partie
     public static final int nbJoueur = 5;
 
     public static void main(String [] args) throws CoupIncorrect {

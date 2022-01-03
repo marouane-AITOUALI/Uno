@@ -78,22 +78,42 @@ public class Uno {
         }
     }
 
+    /**
+     * retourne Le joueur actuel
+     * @return joueurActuel
+     */
     public int getJoueurActuel(){
         return joueurActuel;
     }
 
+    /**
+     * Retourne le joueur à l'indice
+     * @param i Indice
+     * @return Joueur à l'indice i
+     */
     public Joueur getJoueur(int i){
         return joueurs.get(i);
     }
 
+    /**
+     * Retourne Le paquet de la pioche
+     * @return Paquet Pioche
+     */
     public PaquetDeCartes getPioche(){
         return this.pioche;
     }
 
+    /**
+     * Retourne Le paquet de la talon
+     * @return Paquet Talon
+     */
     public PaquetDeCartes getTalon(){
         return this.talon;
     }
 
+    /**
+     * On distribue 7 cartes à chaque joueur
+     */
     public void distribuerCartes(){
         this.pioche  = FabriqueCartes.getInstance().getPaquet108(this);
         pioche.melanger();
@@ -108,6 +128,10 @@ public class Uno {
 
     }
 
+    /**
+     * On choisir le joueur qui va distribuer et
+     * le joueur qui va jouer en premier
+     */
     public void choisirQuiDistribue(){
         Random r = new Random();
         this.joueurQuiDistribue = r.nextInt(this.getNbJoueur());
@@ -125,6 +149,10 @@ public class Uno {
         }
     }
 
+    /**
+     * On choisit qui va jouer selon le joueurActuel et
+     * selon le sens de la partie
+     */
     public void choisirQuiJoue(){
         if(joueurActuel != this.getNbJoueur() - 1 && sensPartie){
             joueurActuel += 1;
@@ -137,6 +165,11 @@ public class Uno {
         }
     }
 
+    /**
+     * Initialiser le jeu avec les joueurs, le sens
+     * et le joueur qui distribue et celui qui va jouer
+     * @param nbJoueur Le nombre de joueur
+     */
     public void initialiser(int nbJoueur){
         assert (nbJoueur > 1) : "Bug nombre de joueurs";
         this.sensPartie = true;
